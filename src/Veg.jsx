@@ -8,15 +8,15 @@ function Veg() {
 
   // Fetch veg products from backend
   useEffect(() => {
-  dispatch(fetchVegProducts()).then((res) => {
-    console.log("VEG BACKEND DATA:", res.payload);
-
-    
-  });
-}, [dispatch]);
+    dispatch(fetchVegProducts()).then((res) => {
+      console.log("VEG BACKEND DATA:", res.payload);
 
 
-  const{vegItems, loading, error } = useSelector((state) => state.veg);
+    });
+  }, [dispatch]);
+
+
+  const { vegItems, loading, error } = useSelector((state) => state.veg);
 
   const items = Array.isArray(vegItems) ? vegItems : [];
 
@@ -34,7 +34,7 @@ function Veg() {
 
       {/* Loading/Error Messages */}
       {loading && <p>Loading products...</p>}
-      {error && <p className="error">{error}</p>}
+      {error && <p className="error-message">{error}</p>}
 
       <div className="veg-grid">
         {Array.isArray(currentItems) &&

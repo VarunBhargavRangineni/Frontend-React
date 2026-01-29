@@ -14,4 +14,15 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+// Global error handler
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      error.message = "Please sign in or login to access";
+    }
+    return Promise.reject(error);
+  }
+);
+
 export default api;

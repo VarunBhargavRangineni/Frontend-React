@@ -26,7 +26,7 @@ function Orders() {
 
       <div className="orders-container">
         {loading && <p>Loading orders...</p>}
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="error-message">{error}</p>}
         {!loading && orderDetails?.length === 0 && <p>No orders found.</p>}
 
         {orderDetails?.map((order, index) => (
@@ -44,11 +44,11 @@ function Orders() {
                       <p>{item.name}</p>
                       <p>Price: ₹{item.price}</p>
                       <p>Qty: {item.quantity}</p>
-                      
+
                     </div>
                   </div>
                 ))}
-                
+
                 <p><b>Total Amount:</b> ₹{order.totalAmount}</p>
                 <p><b>Date:</b> {new Date(order.Orderdate).toLocaleString()}</p>
               </div>
