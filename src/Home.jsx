@@ -42,7 +42,7 @@ function Home() {
 
       {/* Loading/Error Messages */}
       {loading && <p>Loading products...</p>}
-      {error && <p className="error-message">{error}</p>}
+      {error && <p className="error">{error}</p>}
 
       <div className="featured-items">
         {Array.isArray(currentItems) &&

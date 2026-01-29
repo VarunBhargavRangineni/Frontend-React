@@ -42,7 +42,7 @@ function MilkBread() {
 
       {/* Loading/Error */}
       {loading && <p>Loading products...</p>}
-      {error && <p className="error-message">{error}</p>}
+      {error && <p className="error">{error}</p>}
 
       {/* ITEMS */}
       <div className="veg-grid">
